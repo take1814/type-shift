@@ -1,0 +1,11 @@
+# 公開サイトには不要な開発用ファイル
+tmp/
+review/
+tests/
+design/
+
+# ローカル環境・OS生成ファイル
+.DS_Store
+Thumbs.db
+*.log
+

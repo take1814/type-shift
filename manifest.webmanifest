@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "TYPE SHIFT — REWRITE REALITY",
+  "short_name": "TYPE SHIFT",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#05070b",
+  "theme_color": "#0b1018",
+  "description": "文字が世界を書き換えるタイピングRPG",
+  "categories": ["games", "education"],
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

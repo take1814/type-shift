@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1018" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <meta name="description" content="TYPE SHIFT — 文字が世界を書き換えるタイピングRPG" />
+    <title>TYPE SHIFT</title>
+    <link rel="preload" as="image" href="assets/home-ren-aster-v2.png" fetchpriority="high" />
+    <link rel="stylesheet" href="css/base.css?v=rescue-reveal-v57" />
+    <script>
+      // ES Modules は file:// から読み込めないため、プレビュー用サーバーへ切り替える。
+      if (window.location.protocol === 'file:') {
+        window.location.replace(
+          'http://127.0.0.1:4182/' + window.location.search + window.location.hash
+        );
+      }
+    </script>
+    <script type="module" src="js/main.js?v=rescue-reveal-v57"></script>
+  </head>
+  <body>
+    <div class="app-shell" id="app" aria-live="polite">
+      <section class="boot-screen" id="boot-screen">
+        <p class="boot-mark">TYPE SHIFT</p>
+        <h1>アーカイブに接続中…</h1>
+        <p>ゲーム画面を読み込んでいます。</p>
+      </section>
+    </div>
+    <script>
+      window.addEventListener('error', function (event) {
+        var app = document.getElementById('app');
+        if (document.documentElement.dataset.appBoot === 'ready') return;
+        app.innerHTML = '<section class="boot-screen boot-error"><p class="boot-mark">TYPE SHIFT</p><h1>読み込みに失敗しました</h1><p>ページを再読み込みしてください。解消しない場合は、ローカルプレビューを起動し直してください。</p><code>' + String(event.message || 'JavaScript error') + '</code></section>';
+      });
+    </script>
+  </body>
+</html>
